@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.entities.Department;
@@ -25,7 +27,13 @@ public class Program2 {
 		//depDao.deleteById(7);
 		//System.out.println("Delete done!");
 		
-		System.out.println("\n=== TEST 4: department findById  =====");
+		System.out.println("\n=== TEST 4: department findAll  =====");
+		List<Department> list = depDao.findAll();
+		for(Department dp : list) {
+			System.out.println(dp);
+		}
+		
+		System.out.println("\n=== TEST 5: department findById  =====");
 		Department dp = depDao.findById(1);
 		System.out.println(dp);
 	}
